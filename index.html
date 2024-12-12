@@ -13,33 +13,74 @@
         <img src="./Imagens/logomarca.png">
     </div>
 
-    <div id="baixo">
+    <div id="rodape_baixo">
         <div id="opcoes">
-            
-            <span id="btnHome" class="botoes">
-                <img src="./Imagens/home.png"> HOME <br> <br>
-            </span>
-            <span id="btnPessoas" class="botoes">
-                <img src="./Imagens/pessoas.png"> GESTÃO DE PESSOAS <br> <br>
-            </span>
-            <span id="btnFuncao" class="botoes">
-                <img src="./Imagens/funcoes.png"> GESTÃO DE FUNÇÃO <br> <br>
-            </span>
-            <span id="btnImg" class="botoes">
-                <img src="./Imagens/add.png">  CADASTRAR COLABORADOR <br> <br>
-            </span>
-            <span id="btnCadastrar" class="botoes">
-                <img src="./Imagens/add.png">  CADASTRAR FUNÇÃO <br> <br>
-            </span>
-            
+            <div id="btnHome" class="botoes">
+                <img src="./Imagens/home.png"> HOME <br>    
+            </div>
+            <div id="btnPessoas" class="botoes">
+                <img src="./Imagens/pessoas.png"> GESTÃO DE PESSOAS <br> 
+            </div>
+            <div id="btnFuncao" class="botoes">
+                <img src="./Imagens/funcoes.png"> GESTÃO DE FUNÇÃO <br> 
+            </div>
+            <div id="btnColaborador" class="botoes">
+                <img src="./Imagens/add.png">  CADASTRAR COLABORADOR <br> 
+            </div>
+            <div id="btnFuncaoCadastrar" class="botoes">
+                <img src="./Imagens/add.png">  CADASTRAR FUNÇÃO <br> 
+                a
+            </div>
         </div>
-        <div id="funcoes">
+
+
+        <div id="design">
+            <h1>Bem Vindo</h1>  
             
         </div>
     </div>
 
+    <script>
 
+        $("#btnFuncao").click(function(){
+                    $("#design").html(
+                        `<h1>Gestão de funções</h1>
+                           <div id="cartaoFuncao">
+                                Cod da Função: <br>
+                                Cargo:
+                            </div>
+                            `
+                        )
+        });
 
-    <script></script>
+        $("#btnFuncaoCadastrar").click(function(){
+            $("#design").html(
+                `<h1>Cadastro de Funções</h1>
+                    Cargo: <input type="text"> <br> <br>
+                    <button>Cadastrar</button>
+                    `
+                )
+            });
+
+        $("#btnColaborador").click(function(){
+            $("#design").html(
+                `<h1>Cadastro de colaboradores</h1>
+                    Nome: <input type="text"> <br> <br>
+                    Função: <select>
+                        <option value="">Selecione:</option>
+                        <option value="200">200</option>
+                        <option value="201">2001</option>
+                    </select><br> <br>
+                    Situação: <select>
+                        <option value="">Selecione:</option>
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select><br> <br> <br>
+                    <button>Cadastrar</button>
+                    `
+                )
+            });
+
+    </script>
 </body>
 </html>
