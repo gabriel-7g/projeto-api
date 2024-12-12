@@ -35,22 +35,75 @@
 
 
         <div id="design">
-            <h1>Bem Vindo</h1>  
+            <div id="bemVindo">
+                <h1>Bem Vindo</h1>
+            </div>
+
+            <div id="gestaoPessoa">
+                <h1>Gestão de Pessoas</h1>
+                    <div id="botoesFuncao">
+                        <button id="todos">TODOS</button>
+                        <button id="inativos">INATIVOS</button>
+                        <button id="ativos">ATIVOS</button>
+
+                    </div> <br> <br>
+                    <div id="cartaoFuncao">
+                        Matrícula: <br>
+                        Nome: <br>
+                        Função: <br>
+                        Situação:
+                    </div>
+            </div>
+
+            <div id="gestaoFuncao">
+                <h1>Gestão de funções</h1>
+                <div id="cartaoFuncao">
+                    Cod da Função: <br>
+                    Cargo:
+                </div>
+            </div>
+
+            <div id="gestaoCadastroF">
+                <h1>Cadastro de Funções</h1>
+                    Cargo: <input type="text"> <br> <br>
+                    <button id="btn">Cadastrar</button>
+            </div>
+
+            <div id="gestaoCadastroC">
+                <h1>Cadastro de colaboradores</h1>
+                    Nome: <input type="text"> <br> <br>
+                    Função: <select>
+                        <option value="">Selecione:</option>
+                        <option value="200">200</option>
+                        <option value="201">2001</option>
+                    </select><br> <br>
+                    Situação: <select>
+                        <option value="">Selecione:</option>
+                        <option value="ativos">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select><br> <br> <br>
+                    <button>Cadastrar</button>
+            </div>
     
         </div>
     </div>
 
     <script>
+        $("#gestaoPessoa").hide();
+        $("#gestaoFuncao").hide();
+        $("#gestaoCadastroF").hide();
+        $("#gestaoCadastroC").hide();
+
 
         $("#btnHome").click(function(){
-            $("#design").html(
-            `<h1>Bem Vindo</h1>  `
-        )
+                $("#design").html(
+                `<h1>Bem Vindo</h1>  `
+            )
         });
 
         $("#btnPessoas").click(function(){
             $("#design").html(
-                `<h1>Gestão de funções</h1>
+                `<h1>Gestão de Pessoas</h1>
                     <div id="botoesFuncao">
                         <button id="todos">TODOS</button>
                         <button id="inativos">INATIVOS</button>
@@ -83,7 +136,7 @@
             $("#design").html(
                 `<h1>Cadastro de Funções</h1>
                     Cargo: <input type="text"> <br> <br>
-                    <button>Cadastrar</button>
+                    <button id="btnCadastrarFnc">Cadastrar</button>
                     `
                 )
             });
@@ -106,27 +159,14 @@
                 `
             )
         });
-
+        //FIM DO CLICAR E APARECER
+        
         $(document).ready(function(){
-            $("#ativos").click(function(){
-                $.ajax({
-                    url: "http://localhost:3000/pessoas/ativos",
-                    type: "GET",
-                    dataType: "json",
-                    headers: {
-                        api_key: "123456"
-                    },
-                    success: function (resposta){
-                        console.log(resposta);
-                        alert("Sucesso ao buscar dados dos ativos!");
-                        $("#design").html(ativosHtml);
-                    },
-                    error: function () {
-                        alert("Erro ao buscar dados dos ativos.");
-                    }
-                });
+            $("#btn").click(function(){
+                alert(".")
             });
         });
+        
 
 
 
